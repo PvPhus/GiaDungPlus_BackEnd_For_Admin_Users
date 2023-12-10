@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Api.GiaDungPlus_BackEnd_Users.props" />
+</Project>

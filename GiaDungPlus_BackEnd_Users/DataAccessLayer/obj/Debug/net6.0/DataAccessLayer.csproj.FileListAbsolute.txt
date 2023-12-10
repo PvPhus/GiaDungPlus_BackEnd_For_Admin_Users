@@ -1,0 +1,17 @@
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.runtimeconfig.json
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataModel.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\bin\Debug\net6.0\DataModel.pdb
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CopyComplete
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Api.GiaDungPlus_BackEnd_Users.props" />
+</Project>
