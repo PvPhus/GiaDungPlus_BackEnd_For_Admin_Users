@@ -14,7 +14,7 @@ namespace BusinessLogicLayer
         {
             _res = res;
         }
-        public List<SanPhamModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_sanpham)
+        public List<DoGiaDungModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_sanpham)
         {        
             return _res.SearchProducts(pageIndex,pageSize,out total,ten_sanpham);
         }

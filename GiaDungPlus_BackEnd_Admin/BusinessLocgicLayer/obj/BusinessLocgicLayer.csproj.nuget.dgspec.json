@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {}
+    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {}
   },
   "projects": {
-    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
+    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
+        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
         "projectName": "BusinessLocgicLayer",
-        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
+        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
         "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
-        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\obj\\",
+        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vu Phong Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\DataAccessLayer.csproj"
+              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj": {
-                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj"
+              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
+                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj"
               }
             }
           }
@@ -88,14 +88,14 @@
         }
       }
     },
-    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
-        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataAccessLayer\\obj\\",
+        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vu Phong Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -112,8 +112,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj": {
-                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj"
+              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
+                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj"
               }
             }
           }
@@ -173,14 +173,14 @@
         }
       }
     },
-    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj": {
+    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj",
+        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj",
         "projectName": "DataModel",
-        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj",
+        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj",
         "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
-        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\obj\\",
+        "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vu Phong Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",

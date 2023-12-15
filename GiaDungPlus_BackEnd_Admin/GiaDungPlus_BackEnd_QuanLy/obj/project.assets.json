@@ -3760,11 +3760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\GiaDungPlus_BackEnd_QuanLy\\Api.GiaDungPlus.csproj",
+      "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_BackEnd_QuanLy\\Api.GiaDungPlus.csproj",
       "projectName": "Api.GiaDungPlus",
-      "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\GiaDungPlus_BackEnd_QuanLy\\Api.GiaDungPlus.csproj",
+      "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_BackEnd_QuanLy\\Api.GiaDungPlus.csproj",
       "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
-      "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\GiaDungPlus_BackEnd_QuanLy\\obj\\",
+      "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_BackEnd_QuanLy\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vu Phong Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3781,11 +3781,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
-              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj"
+            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
+              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj"
             },
-            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj": {
-              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_Admin\\DataModel\\DataModel.csproj"
+            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
+              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj"
             }
           }
         }

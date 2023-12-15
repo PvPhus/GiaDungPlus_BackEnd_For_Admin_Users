@@ -15,3 +15,4 @@ D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\De
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.genruntimeconfig.cache
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.sourcelink.json

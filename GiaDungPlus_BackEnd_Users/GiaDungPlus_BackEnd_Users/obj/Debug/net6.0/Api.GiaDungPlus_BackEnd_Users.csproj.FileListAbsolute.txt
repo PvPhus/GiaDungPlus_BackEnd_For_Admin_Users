@@ -99,3 +99,4 @@ D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\GiaDungPlus_BackEnd_Us
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\GiaDungPlus_BackEnd_Users\obj\Debug\net6.0\Api.GiaDungPlus_BackEnd_Users.pdb
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\GiaDungPlus_BackEnd_Users\obj\Debug\net6.0\Api.GiaDungPlus_BackEnd_Users.genruntimeconfig.cache
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\GiaDungPlus_BackEnd_Users\obj\Debug\net6.0\ref\Api.GiaDungPlus_BackEnd_Users.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\GiaDungPlus_BackEnd_Users\obj\Debug\net6.0\Api.GiaDungPlus_BackEnd_Users.sourcelink.json

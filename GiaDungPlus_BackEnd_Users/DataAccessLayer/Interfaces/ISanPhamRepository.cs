@@ -10,6 +10,6 @@ namespace DataAccessLayer.Interfaces
 {
     public partial interface ISanPhamRepository
     { 
-        public List<SanPhamModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_sanpham);
+        public List<DoGiaDungModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_sanpham);
     }
 }

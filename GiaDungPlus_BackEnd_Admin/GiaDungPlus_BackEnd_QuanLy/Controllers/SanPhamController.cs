@@ -31,14 +31,14 @@ namespace Api.GiaDungPlus.Controllers
         [HttpPost]
         public SanPhamModel UpdateItem([FromBody] SanPhamModel model)
         {
-            _sanPhamBusiness.Create(model);
+            _sanPhamBusiness.Update(model);
             return model;
         }
         [Route("delete-san-pham")]
         [HttpPost]
         public SanPhamModel DeleteItem([FromBody] SanPhamModel model)
         {
-            _sanPhamBusiness.Create(model);
+            _sanPhamBusiness.Delete(model);
             return model;
         }
     }

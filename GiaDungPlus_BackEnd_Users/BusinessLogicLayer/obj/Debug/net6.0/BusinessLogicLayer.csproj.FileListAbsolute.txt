@@ -17,3 +17,4 @@ D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\BusinessLogicLayer\obj
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.pdb
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.genruntimeconfig.cache
 D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\BusinessLogicLayer\obj\Debug\net6.0\ref\BusinessLogicLayer.dll
+D:\BaiTapLonWeb-FontEnd-BackEnd\GiaDungPlus_BackEnd_Users\BusinessLogicLayer\obj\Debug\net6.0\BusinessLogicLayer.sourcelink.json
