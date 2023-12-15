@@ -1,5 +1,7 @@
 using BusinessLogicLayer;
+using BusinessLogicLayer.Interfaces;
 using DataAccessLayer;
+using DataAccessLayer.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -14,8 +16,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 //builder.Services.AddTransient<IKhachRepository, KhachRepository>();
 //builder.Services.AddTransient<IKhachBusiness, KhachBusiness>();
-//builder.Services.AddTransient<IHoaDonRepository, HoaDonRepository>();
-//builder.Services.AddTransient<IHoaDonBusiness, HoaDonBusiness>();
+builder.Services.AddTransient<IHoaDonRepository, HoaDonRepository>();
+builder.Services.AddTransient<IHoaDonBusiness, HoaDonBusiness>();
 //builder.Services.AddTransient<IUserRepository, UserRepository>();
 //builder.Services.AddTransient<IUserBusiness, UserBusiness>();
 builder.Services.AddTransient<ISanPhamRepository, SanPhamRepository>();

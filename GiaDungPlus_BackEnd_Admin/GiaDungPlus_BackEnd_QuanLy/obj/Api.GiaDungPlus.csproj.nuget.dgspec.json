@@ -4,12 +4,12 @@
     "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\GiaDungPlus_BackEnd_QuanLy\\Api.GiaDungPlus.csproj": {}
   },
   "projects": {
-    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
+    "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
-        "projectName": "BusinessLocgicLayer",
-        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
+        "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj",
+        "projectName": "BusinessLogicLayer",
+        "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj",
         "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
         "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\obj\\",
         "projectStyle": "PackageReference",
@@ -270,8 +270,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
-                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj"
+              "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj": {
+                "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj"
               },
               "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
                 "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj"

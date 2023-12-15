@@ -9,11 +9,17 @@ namespace DataModel
 {
     public class AuthenticateModel
     {
+        public int MaTaiKhoan { get; set; }
         [Required]
-        public string Username { get; set; }
+        public string? TenTaiKhoan { get; set; }
+        [Required]
+        public string? MatKhau { get; set; }
 
-        [Required]
-        public string Password { get; set; }
+        public string? LoaiTaiKhoan { get; set; }
+
+        public int? MaNhanVien { get; set; }
+
+        public int? MaKhachHang { get; set; }
     }
 
     public class AppSettings

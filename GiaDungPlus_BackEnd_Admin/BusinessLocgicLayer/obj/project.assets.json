@@ -3279,9 +3279,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
-      "projectName": "BusinessLocgicLayer",
-      "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
+      "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj",
+      "projectName": "BusinessLogicLayer",
+      "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj",
       "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
       "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\obj\\",
       "projectStyle": "PackageReference",

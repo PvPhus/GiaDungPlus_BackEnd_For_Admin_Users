@@ -411,14 +411,14 @@ CREATE PROCEDURE [dbo].[sp_san_pham_create](
 @TenSanPham nvarchar(100),
 @Gia decimal(18, 0),
 @MoTa nvarchar(MAX),
-@HinhAnh varchar(500)
+@HinhAnh varchar(500),
+@MaLoai INT
 )
 AS
     BEGIN
-       insert into DoGiaDung(MaSanPham,TenSanPham,Gia,MoTa,HinhAnh)
-	   values(@MaSanPham,@TenSanPham,@Gia,@MoTa,@HinhAnh);
+       insert into DoGiaDung(MaSanPham,TenSanPham,Gia,MoTa,HinhAnh,MaLoai)
+	   values(@MaSanPham,@TenSanPham,@Gia,@MoTa,@HinhAnh,@MaLoai);
     END;
-
 --Sản Phẩm - Update.
 CREATE PROCEDURE [dbo].[sp_san_pham_update](
     @MaSanPham INT,
@@ -801,3 +801,16 @@ BEGIN
 
     SELECT 'Xóa hóa đơn bán thành công.' AS Result;
 END;
+
+--===================================================Store-Procedure Login===========================================
+--CHECK LOGIN
+CREATE PROCEDURE [dbo].[sp_login]
+(@taikhoan nvarchar(50), 
+ @matkhau nvarchar(50))
+AS
+    BEGIN
+      SELECT  *
+      FROM TaiKhoan
+      where TenTaiKhoan= @taikhoan and MatKhau = @matkhau;
+    END;
+--RESIGTER

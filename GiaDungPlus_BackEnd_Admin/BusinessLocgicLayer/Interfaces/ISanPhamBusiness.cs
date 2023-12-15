@@ -9,9 +9,9 @@ namespace BusinessLogicLayer
 {
     public partial interface ISanPhamBusiness
     {
-        SanPhamModel GetChiTietSanPham(int id);
-        bool Create(SanPhamModel model);
-        bool Update(SanPhamModel model);
-        bool Delete(SanPhamModel model);
+        DoGiaDungModel GetChiTietSanPham(int id);
+        bool Create(DoGiaDungModel model);
+        bool Update(DoGiaDungModel model);
+        bool Delete(DoGiaDungModel model);
     }
 }

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.GiaDungPlus", "GiaDungP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{CA295417-3873-4993-AEAC-82051BB3E36E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLocgicLayer", "BusinessLocgicLayer\BusinessLocgicLayer.csproj", "{C9AF55F7-1BCC-4CE6-8324-7E9CBA8E0813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLogicLayer", "BusinessLocgicLayer\BusinessLogicLayer.csproj", "{C9AF55F7-1BCC-4CE6-8324-7E9CBA8E0813}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataModel", "DataModel\DataModel.csproj", "{11A93C54-EAEF-4E43-A351-F4E3139F2BDD}"
 EndProject

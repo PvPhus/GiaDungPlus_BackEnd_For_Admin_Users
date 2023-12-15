@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q0CMBnhquP/9NASsAK7F4ClGdTbMX5yM5C4ZnxR+EleQpDXEOyeVQoeUQXJrtvAVMdT+2sPdAtO7zLj7OMrrXg==",
+  "dgSpecHash": "ywp9Y6SbdkffTaXutqln6Vxu+TRxuvwKJ+E5QXEsE5brHveSNi8vxGlMx0zMka3jpXWJ3gA8c0mmT/jAAp9eMg==",
   "success": true,
-  "projectFilePath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj",
+  "projectFilePath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

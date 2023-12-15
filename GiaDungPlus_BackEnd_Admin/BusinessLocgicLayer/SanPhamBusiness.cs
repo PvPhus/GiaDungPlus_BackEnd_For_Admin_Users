@@ -12,19 +12,19 @@ namespace BusinessLogicLayer
         {
             _res = res;
         }
-        public SanPhamModel GetChiTietSanPham(int id)
+        public DoGiaDungModel GetChiTietSanPham(int id)
         {
             return _res.GetChiTietSanPham(id);
         }
-        public bool Create(SanPhamModel model)
+        public bool Create(DoGiaDungModel model)
         {
             return _res.Create(model);
         }
-        public bool Update(SanPhamModel model)
+        public bool Update(DoGiaDungModel model)
         {
             return _res.Update(model);
         }
-        public bool Delete(SanPhamModel model)
+        public bool Delete(DoGiaDungModel model)
         {
             return _res.Delete(model);
         }

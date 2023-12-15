@@ -14,29 +14,29 @@ namespace Api.GiaDungPlus.Controllers
         {
             _sanPhamBusiness = sanPhamBusiness;
         }
-        [Route("get-by-id/{id}")]
+        [Route("get-by-id/id:")]
         [HttpGet]
-        public SanPhamModel GetDatabyID(int id)
+        public DoGiaDungModel GetDatabyID(int id)
         {
             return _sanPhamBusiness.GetChiTietSanPham(id);
         }
-        [Route("create-san-pham")]
+        [Route("create-DoGiaDung")]
         [HttpPost]
-        public SanPhamModel CreateItem([FromBody] SanPhamModel model)
+        public DoGiaDungModel CreateItem([FromBody] DoGiaDungModel model)
         {
             _sanPhamBusiness.Create(model);
             return model;
         }
-        [Route("update-san-pham")]
+        [Route("update-DoGiaDung")]
         [HttpPost]
-        public SanPhamModel UpdateItem([FromBody] SanPhamModel model)
+        public DoGiaDungModel UpdateItem([FromBody] DoGiaDungModel model)
         {
             _sanPhamBusiness.Update(model);
             return model;
         }
-        [Route("delete-san-pham")]
+        [Route("delete-DoGiaDung")]
         [HttpPost]
-        public SanPhamModel DeleteItem([FromBody] SanPhamModel model)
+        public DoGiaDungModel DeleteItem([FromBody] DoGiaDungModel model)
         {
             _sanPhamBusiness.Delete(model);
             return model;

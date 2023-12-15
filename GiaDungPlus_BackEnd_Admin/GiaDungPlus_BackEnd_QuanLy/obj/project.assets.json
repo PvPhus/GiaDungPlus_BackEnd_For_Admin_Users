@@ -1271,7 +1271,7 @@
           }
         }
       },
-      "BusinessLocgicLayer/1.0.0": {
+      "BusinessLogicLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -1281,10 +1281,10 @@
           "System.IdentityModel.Tokens.Jwt": "6.32.3"
         },
         "compile": {
-          "bin/placeholder/BusinessLocgicLayer.dll": {}
+          "bin/placeholder/BusinessLogicLayer.dll": {}
         },
         "runtime": {
-          "bin/placeholder/BusinessLocgicLayer.dll": {}
+          "bin/placeholder/BusinessLogicLayer.dll": {}
         }
       },
       "DataAccessLayer/1.0.0": {
@@ -3727,10 +3727,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "BusinessLocgicLayer/1.0.0": {
+    "BusinessLogicLayer/1.0.0": {
       "type": "project",
-      "path": "../BusinessLocgicLayer/BusinessLocgicLayer.csproj",
-      "msbuildProject": "../BusinessLocgicLayer/BusinessLocgicLayer.csproj"
+      "path": "../BusinessLocgicLayer/BusinessLogicLayer.csproj",
+      "msbuildProject": "../BusinessLocgicLayer/BusinessLogicLayer.csproj"
     },
     "DataAccessLayer/1.0.0": {
       "type": "project",
@@ -3745,7 +3745,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "BusinessLocgicLayer >= 1.0.0",
+      "BusinessLogicLayer >= 1.0.0",
       "DataModel >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.25",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.14",
@@ -3781,8 +3781,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj": {
-              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLocgicLayer.csproj"
+            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\BusinessLocgicLayer\\BusinessLogicLayer.csproj"
             },
             "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj": {
               "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Admin\\DataModel\\DataModel.csproj"

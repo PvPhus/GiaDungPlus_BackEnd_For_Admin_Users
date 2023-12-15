@@ -10,7 +10,7 @@ namespace DataAccessLayer
             _dbHelper = dbHelper;
         }
 
-        public SanPhamModel GetChiTietSanPham(int id)
+        public DoGiaDungModel GetChiTietSanPham(int id)
         {
             string msgError = "";
             try
@@ -19,7 +19,7 @@ namespace DataAccessLayer
                      "@MaSanPham", id);
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);
-                return dt.ConvertTo<SanPhamModel>().FirstOrDefault();
+                return dt.ConvertTo<DoGiaDungModel>().FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -27,16 +27,18 @@ namespace DataAccessLayer
             }
         }
 
-        public bool Create(SanPhamModel model)
+        public bool Create(DoGiaDungModel model)
         {
-            string msgError = "";
+            string msgError = "Thêm thất bại!";
             try
             {
-                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_san_pham_create",             
+                var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_san_pham_create", 
+                "@MaSanPham", model.MaSanPham,
                 "@TenSanPham", model.TenSanPham,
                 "@Gia", model.Gia,
                 "@MoTa", model.MoTa,
-                "@HinhAnh", model.HinhAnh);
+                "@HinhAnh", model.HinhAnh,
+                "@MaLoai", model.MaLoai);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -48,9 +50,9 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public bool Update(SanPhamModel model)
+        public bool Update(DoGiaDungModel model)
         {
-            string msgError = "";
+            string msgError = "Sửa không thành công!";
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_san_pham_update",
@@ -58,7 +60,8 @@ namespace DataAccessLayer
                 "@TenSanPham", model.TenSanPham,
                 "@Gia", model.Gia,
                 "@MoTa", model.MoTa,
-                "@HinhAnh", model.HinhAnh);               
+                "@HinhAnh", model.HinhAnh,
+                "@MaLoai", model.MaLoai);
                 if ((result != null && !string.IsNullOrEmpty(result.ToString())) || !string.IsNullOrEmpty(msgError))
                 {
                     throw new Exception(Convert.ToString(result) + msgError);
@@ -70,7 +73,7 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public bool Delete(SanPhamModel model)
+        public bool Delete(DoGiaDungModel model)
         {
             string msgError = "";
             try
