@@ -14,14 +14,14 @@ builder.Services.AddCors(options =>
 });
 // Add services to the container.
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
-//builder.Services.AddTransient<IKhachRepository, KhachRepository>();
-//builder.Services.AddTransient<IKhachBusiness, KhachBusiness>();
+builder.Services.AddTransient<IKhachHangRepository, KhachHangRepository>();
+builder.Services.AddTransient<IKhachHangBusiness, KhachHangBusiness>();
+builder.Services.AddTransient<INhaCungCapRepository, NhaCungCapRepository>();
+builder.Services.AddTransient<INhaCungCapBusiness, NhaCungCapBusiness>();
 builder.Services.AddTransient<IHoaDonRepository, HoaDonRepository>();
 builder.Services.AddTransient<IHoaDonBusiness, HoaDonBusiness>();
-//builder.Services.AddTransient<IUserRepository, UserRepository>();
-//builder.Services.AddTransient<IUserBusiness, UserBusiness>();
-builder.Services.AddTransient<ISanPhamRepository, SanPhamRepository>();
-builder.Services.AddTransient<ISanPhamBusiness, SanPhamBusiness>();
+builder.Services.AddTransient<IDoGiaDungRepository, DoGiaDungRepository>();
+builder.Services.AddTransient<IDoGiaDungBusiness, DoGiaDungBusiness>();
 
 
 // configure strongly typed settings objects

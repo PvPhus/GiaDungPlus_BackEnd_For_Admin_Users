@@ -633,7 +633,62 @@ BEGIN
 
     SELECT 'Xóa hóa đơn nhập thành công.' AS Result;
 END;
+--HOA DON NHAP SEARCH--
+CREATE PROCEDURE [dbo].[sp_hoadon_nhap_search]
+    @page_index INT,
+    @page_size INT,
+    @MaHoaDonNhap NVARCHAR(100) 
+AS
+BEGIN
+    DECLARE @RecordCount BIGINT;
 
+    IF (@page_size <> 0)
+    BEGIN
+        SET NOCOUNT ON;
+
+        SELECT
+            (ROW_NUMBER() OVER (ORDER BY MaHoaDonNhap ASC)) AS RowNumber,
+            s.MaHoaDonNhap,
+            s.MaNhanVien,
+            s.MaNhaCungCap,
+            s.NgayNhap,
+            s.TongTien		
+        INTO #Results1
+        FROM HoaDonNhap AS s
+        WHERE
+            (@MaHoaDonNhap = '' OR s.MaHoaDonNhap LIKE N'%' + @MaHoaDonNhap + '%');
+        SELECT @RecordCount = COUNT(*) 
+		FROM #Results1;
+
+        SELECT *,
+               @RecordCount AS RecordCount
+        FROM #Results1
+        WHERE RowNumber BETWEEN (@page_index - 1) * @page_size + 1 AND ((@page_index - 1) * @page_size + 1) + @page_size - 1
+           OR @page_index = -1;
+    END;
+    ELSE
+    BEGIN
+        SET NOCOUNT ON;
+
+        SELECT
+            (ROW_NUMBER() OVER (ORDER BY MaHoaDonNhap ASC)) AS RowNumber,
+           s.MaHoaDonNhap,
+            s.MaNhanVien,
+            s.MaNhaCungCap,
+            s.NgayNhap,
+            s.TongTien	
+        INTO #Results2
+        FROM HoaDonNhap AS s
+        WHERE
+            (@MaHoaDonNhap = '' OR s.MaHoaDonNhap LIKE N'%' + @MaHoaDonNhap + '%');   
+        SELECT @RecordCount = COUNT(*)
+		FROM #Results2;
+
+        SELECT *,
+               @RecordCount AS RecordCount
+        FROM #Results2;
+    END;
+END;
 
 --=====================================================Store Procedures-Hóa Đơn Bán=====================================--
 --HÓA ĐƠN BÁN - GET BY ID
@@ -801,6 +856,372 @@ BEGIN
 
     SELECT 'Xóa hóa đơn bán thành công.' AS Result;
 END;
+--HOA DON BAN SEARCH--
+CREATE PROCEDURE [dbo].[sp_hoadon_ban_search]
+    @page_index INT,
+    @page_size INT,
+    @MaHoaDonBan NVARCHAR(100) 
+AS
+BEGIN
+    DECLARE @RecordCount BIGINT;
+
+    IF (@page_size <> 0)
+    BEGIN
+        SET NOCOUNT ON;
+
+        SELECT
+            (ROW_NUMBER() OVER (ORDER BY MaHoaDonBan ASC)) AS RowNumber,
+            s.MaHoaDonBan,
+            s.MaNhanVien,
+            s.MaKhachHang,
+            s.NgayBan           		
+        INTO #Results1
+        FROM HoaDonBan AS s
+        WHERE
+            (@MaHoaDonBan = '' OR s.MaHoaDonBan LIKE N'%' + @MaHoaDonBan + '%');
+        SELECT @RecordCount = COUNT(*) 
+		FROM #Results1;
+
+        SELECT *,
+               @RecordCount AS RecordCount
+        FROM #Results1
+        WHERE RowNumber BETWEEN (@page_index - 1) * @page_size + 1 AND ((@page_index - 1) * @page_size + 1) + @page_size - 1
+           OR @page_index = -1;
+    END;
+    ELSE
+    BEGIN
+        SET NOCOUNT ON;
+
+        SELECT
+            (ROW_NUMBER() OVER (ORDER BY MaHoaDonBan ASC)) AS RowNumber,
+            s.MaHoaDonBan,
+            s.MaNhanVien,
+            s.MaKhachHang,
+            s.NgayBan	
+        INTO #Results2
+        FROM HoaDonBan AS s
+        WHERE
+            (@MaHoaDonBan = '' OR s.MaHoaDonBan LIKE N'%' + @MaHoaDonBan + '%');   
+        SELECT @RecordCount = COUNT(*)
+		FROM #Results2;
+
+        SELECT *,
+               @RecordCount AS RecordCount
+        FROM #Results2;
+    END;
+END;
+
+--===================================================Store-Procedure KhachHang===========================================
+--GET BY ID KHACH HANG------
+CREATE PROCEDURE [dbo].[sp_khach_hang_get_by_id](@MaKhachHang int)
+AS
+    BEGIN
+      SELECT  *
+      FROM KhachHang
+      where MaKhachHang= @MaKhachHang;
+    END;
+--CREATE KHACH HANG--
+CREATE PROCEDURE [dbo].[sp_khach_hang_create](
+@MaKhachHang int,
+@TenKhachHang nvarchar(255),
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+       insert into KhachHang(MaKhachHang,TenKhachHang,DiaChi,SoDienThoai)
+	   values(@MaKhachHang,@TenKhachHang,@DiaChi,@SoDienThoai);
+    END;
+--UPDATE KHACH HANG--
+CREATE PROCEDURE [dbo].[sp_khach_hang_update](
+@MaKhachHang int,
+@TenKhachHang nvarchar(255),
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+		update KhachHang set 
+		TenKhachHang = @TenKhachHang,
+		DiaChi = @DiaChi,
+		SoDienThoai = @SoDienThoai
+		where MaKhachHang = @MaKhachHang; 
+    END;
+--DELETE KHACH HANG--
+CREATE PROCEDURE [dbo].[sp_khach_hang_delete](
+    @MaKhachHang int
+)
+AS
+BEGIN
+    DELETE FROM KhachHang WHERE MaKhachHang = @MaKhachHang;
+END;
+--SEARCH KHACH HANG--
+CREATE PROCEDURE [dbo].[sp_khach_hang _search] 
+(@page_index INT, 
+ @page_size INT,
+ @TenKhachHang Nvarchar(255),
+ @DiaChi Nvarchar(250)
+)
+AS
+    BEGIN
+        DECLARE @RecordCount BIGINT;
+        IF(@page_size <> 0)
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenKhachHang ASC)) AS RowNumber, 
+                              k.MaKhachHang,
+							  k.TenKhachHang,
+							  k.DiaChi
+                        INTO #Results1
+                        FROM KhachHang AS k
+					    WHERE  (@TenKhachHang = '' Or k.TenKhachHang like N'%'+@TenKhachHang+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results1;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results1
+                        WHERE ROWNUMBER BETWEEN(@page_index - 1) * @page_size + 1 AND(((@page_index - 1) * @page_size + 1) + @page_size) - 1
+                              OR @page_index = -1;
+                        DROP TABLE #Results1; 
+            END;
+            ELSE
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenKhachHang ASC)) AS RowNumber, 
+                              k.MaKhachHang,
+							  k.TenKhachHang,
+							  k.DiaChi
+                        INTO #Results2
+                        FROM KhachHang AS k
+					    WHERE  (@TenKhachHang = '' Or k.TenKhachHang like N'%'+@TenKhachHang+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results2;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results2;                        
+                        DROP TABLE #Results1; 
+        END;
+    END;
+--==================================Stored Procedures Nha Cung Cap===================================--
+--GET BY ID NHA CUNG CAP------
+CREATE PROCEDURE [dbo].[sp_nha_cung_cap_get_by_id](@MaNhaCungCap int)
+AS
+    BEGIN
+      SELECT  *
+      FROM NhaCungCap
+      where MaNhaCungCap= @MaNhaCungCap;
+    END;
+--CREATE NHA CUNG CAP--
+CREATE PROCEDURE [dbo].[sp_nha_cung_cap_create](
+@MaNhaCungCap int,
+@TenNhaCungCap nvarchar(255),
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+       insert into NhaCungCap(MaNhaCungCap,TenNhaCungCap,DiaChi,SoDienThoai)
+	   values(@MaNhaCungCap,@TenNhaCungCap,@DiaChi,@SoDienThoai);
+    END;
+--UPDATE NHA CUNG CAP--
+CREATE PROCEDURE [dbo].[sp_nha_cung_cap_update](
+@MaNhaCungCap int,
+@TenNhaCungCap nvarchar(255),
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+		update NhaCungCap set 
+		TenNhaCungCap = @TenNhaCungCap,
+		DiaChi = @DiaChi,
+		SoDienThoai = @SoDienThoai
+		where MaNhaCungCap = @MaNhaCungCap; 
+    END;
+--DELETE NHA CUNG CAP--
+CREATE PROCEDURE [dbo].[sp_nha_cung_cap_delete](
+    @MaNhaCungCap int
+)
+AS
+BEGIN
+    DELETE FROM NhaCungCap WHERE MaNhaCungCap = @MaNhaCungCap;
+END;
+--SEARCH NHA CUNG CAP--
+CREATE PROCEDURE [dbo].[sp_nha_cung_cap_search] 
+(@page_index INT, 
+ @page_size INT,
+ @TenNhaCungCap Nvarchar(255),
+ @DiaChi Nvarchar(255)
+)
+AS
+    BEGIN
+        DECLARE @RecordCount BIGINT;
+        IF(@page_size <> 0)
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenNhaCungCap ASC)) AS RowNumber, 
+                              k.MaNhaCungCap,
+							  k.TenNhaCungCap,
+							  k.DiaChi
+                        INTO #Results1
+                        FROM NhaCungCap AS k
+					    WHERE  (@TenNhaCungCap = '' Or k.TenNhaCungCap like N'%'+@TenNhaCungCap+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results1;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results1
+                        WHERE ROWNUMBER BETWEEN(@page_index - 1) * @page_size + 1 AND(((@page_index - 1) * @page_size + 1) + @page_size) - 1
+                              OR @page_index = -1;
+                        DROP TABLE #Results1; 
+            END;
+            ELSE
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenNhaCungCap ASC)) AS RowNumber, 
+                              k.MaNhaCungCap,
+							  k.TenNhaCungCap,
+							  k.DiaChi
+                        INTO #Results2
+                        FROM NhaCungCap AS k
+					    WHERE  (@TenNhaCungCap = '' Or k.TenNhaCungCap like N'%'+@TenNhaCungCap+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results2;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results2;                        
+                        DROP TABLE #Results1; 
+        END;
+    END;
+
+--===============================================Stored Procedure Nhan Vien======================================--
+--GET BY ID NHAN VIEN------
+CREATE PROCEDURE [dbo].[sp_nhan_vien_get_by_id](@MaNhanVien int)
+AS
+    BEGIN
+      SELECT  *
+      FROM NhanVien
+      where MaNhanVien= @MaNhanVien;
+    END;
+--CREATE NHAN VIEN--
+CREATE PROCEDURE [dbo].[sp_nhan_vien_create](
+@MaNhaCungCap int,
+@TenNhaCungCap nvarchar(255),
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+       insert into NhaCungCap(MaNhaCungCap,TenNhaCungCap,DiaChi,SoDienThoai)
+	   values(@MaNhaCungCap,@TenNhaCungCap,@DiaChi,@SoDienThoai);
+    END;
+--UPDATE NHAN VIEN--
+CREATE PROCEDURE [dbo].[sp_nhan_vien_update](
+@MaNhanVien int,
+@TenNhanVien nvarchar(255),
+@ChucVu nvarchar(50),
+@NgaySinh date,
+@DiaChi nvarchar(255),
+@SoDienThoai nvarchar(20)
+)
+AS
+    BEGIN
+		update NhanVien set 
+		TenNhanVien = @TenNhanVien,
+		ChucVu = @ChucVu,
+		NgaySinh = @NgaySinh,
+		DiaChi = @DiaChi,
+		SoDienThoai = @SoDienThoai
+		where MaNhanVien = @MaNhanVien; 
+    END;
+--DELETE NHAN VIEN--
+CREATE PROCEDURE [dbo].[sp_nhan_vien_delete](
+    @MaNhanVien int
+)
+AS
+BEGIN
+    DELETE FROM NhanVien WHERE MaNhanVien = @MaNhanVien;
+END;
+--SEARCH NHAN VIEN--
+CREATE PROCEDURE [dbo].[sp_nhan_vien_search] 
+(@page_index INT, 
+ @page_size INT,
+ @TenNhanVien Nvarchar(255),
+ @DiaChi Nvarchar(255)
+)
+AS
+    BEGIN
+        DECLARE @RecordCount BIGINT;
+        IF(@page_size <> 0)
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenNhanVien ASC)) AS RowNumber, 
+                              k.MaNhanVien,
+							  k.TenNhanVien,
+							  k.ChucVu,
+							  k.NgaySinh,
+							  k.DiaChi,
+							  k.SoDienThoai
+                        INTO #Results1
+                        FROM NhanVien AS k
+					    WHERE  (@TenNhanVien = '' Or k.TenNhanVien like N'%'+@TenNhanVien+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results1;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results1
+                        WHERE ROWNUMBER BETWEEN(@page_index - 1) * @page_size + 1 AND(((@page_index - 1) * @page_size + 1) + @page_size) - 1
+                              OR @page_index = -1;
+                        DROP TABLE #Results1; 
+            END;
+            ELSE
+            BEGIN
+						SET NOCOUNT ON;
+                        SELECT(ROW_NUMBER() OVER(
+                              ORDER BY TenNhanVien ASC)) AS RowNumber, 
+                              k.MaNhanVien,
+							  k.TenNhanVien,
+							  k.ChucVu,
+							  k.NgaySinh,
+							  k.DiaChi,
+							  k.SoDienThoai
+                        INTO #Results2
+                        FROM NhanVien AS k
+					    WHERE  (@TenNhanVien = '' Or k.TenNhanVien like N'%'+@TenNhanVien+'%') and						
+						(@DiaChi = '' Or k.DiaChi like N'%'+@DiaChi+'%');                   
+                        SELECT @RecordCount = COUNT(*)
+                        FROM #Results2;
+                        SELECT *, 
+                               @RecordCount AS RecordCount
+                        FROM #Results2;                        
+                        DROP TABLE #Results1; 
+        END;
+    END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 --===================================================Store-Procedure Login===========================================
 --CHECK LOGIN
@@ -814,3 +1235,16 @@ AS
       where TenTaiKhoan= @taikhoan and MatKhau = @matkhau;
     END;
 --RESIGTER
+CREATE PROCEDURE [dbo].[sp_resigter](
+@MaTaiKhoan int,
+@TenTaiKhoan nvarchar(50),
+@MatKhau nvarchar(50),
+@LoaiTaiKhoan nvarchar(20),
+@MaNhanVien int,
+@MaKhachHang int
+)
+AS
+    BEGIN
+       insert into TaiKhoan(MaTaiKhoan,TenTaiKhoan,MatKhau,LoaiTaiKhoan,MaNhanVien,MaKhachHang)
+	   values(@MaTaiKhoan,@TenTaiKhoan,@MatKhau,@LoaiTaiKhoan,@MaNhanVien,@MaKhachHang);
+    END;

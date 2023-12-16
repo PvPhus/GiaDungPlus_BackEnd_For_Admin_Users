@@ -16,5 +16,4 @@ namespace DataModel
         public String HinhAnh { get; set; }    
         public int MaLoai { get; set; }
     }
-
 }
