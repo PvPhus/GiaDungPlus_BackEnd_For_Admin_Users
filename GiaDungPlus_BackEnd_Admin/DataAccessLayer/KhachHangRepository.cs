@@ -22,7 +22,7 @@ namespace DataAccessLayer
             try
             {
                 var dt = _databaseHelper.ExecuteSProcedureReturnDataTable(out msgError, 
-                    "sp_khachhang_get_by_id",
+                    "sp_khach_hang_get_by_id",
                     "@MaKhachHang", id);
                 if (!string.IsNullOrEmpty(msgError)) 
                 { 
@@ -95,7 +95,7 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-        public List<KhachHangModel> SearchKhachHang(int pageIndex, int pageSize, out long total, string nameKH)
+        public List<KhachHangModel> SearchKhachHang(int pageIndex, int pageSize, out long total, string nameKH, string diaChi)
         {
             string msgError = "";
             total = 0;
@@ -104,7 +104,8 @@ namespace DataAccessLayer
                 var dt = _databaseHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_khach_hang_search",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,
-                    "@TenKhachHang", nameKH
+                    "@TenKhachHang", nameKH,
+                    "@DiaChi", diaChi
                      );
                 if (!string.IsNullOrEmpty(msgError))
                     throw new Exception(msgError);

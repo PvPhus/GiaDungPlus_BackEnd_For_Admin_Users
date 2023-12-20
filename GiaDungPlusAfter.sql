@@ -461,6 +461,54 @@ AS
         FROM DoGiaDung AS s
         WHERE  s.MaSanPham = @MaSanPham;
     END;
+---Get all Sản Phẩm----
+CREATE PROCEDURE [dbo].[sp_get_all_products]
+AS
+BEGIN
+    SELECT * FROM DoGiaDung;
+END;
+EXEC [dbo].[sp_get_all_products];
+---==============================================Loại sản phẩm========================================================
+----GET ALL LOẠI SẢN PHẨM
+CREATE PROCEDURE [dbo].[sp_get_all_category]
+AS
+BEGIN
+    SELECT * FROM LoaiDoGiaDung;
+END;
+
+--LOẠI ĐỒ GIA DỤNG - CREATE
+CREATE PROCEDURE [dbo].[sp_loai_san_pham_create](
+@MaLoai INT,
+@TenLoai nvarchar(100),
+@SoLuongLoaiTon INT
+)
+AS
+    BEGIN
+       insert into LoaiDoGiaDung(MaLoai,TenLoai,SoLuongLoaiTon)
+	   values(@MaLoai,@TenLoai,@SoLuongLoaiTon);
+    END;
+--LOẠI ĐỒ GIA DỤNG - Update.
+CREATE PROCEDURE [dbo].[sp_loai_san_pham_update](
+    @MaLoai INT,
+    @TenLoai NVARCHAR(50),
+    @SoLuongLoaiTon INT
+)
+AS
+BEGIN   
+    UPDATE LoaiDoGiaDung
+    SET TenLoai = ISNULL(@TenLoai, TenLoai),
+        SoLuongLoaiTon = ISNULL(@SoLuongLoaiTon, SoLuongLoaiTon)       
+    WHERE MaLoai = @MaLoai;
+END;
+
+--LOẠI ĐỒ GIA DỤNG - DELETE
+CREATE PROCEDURE [dbo].[sp_loai_san_pham_delete](
+    @MaLoai int
+)
+AS
+BEGIN
+    DELETE FROM LoaiDoGiaDung WHERE MaLoai = @MaLoai;
+END;
 
 --===================================================================================================================================
 --===================================================Store Procedures-Hóa Đơn Nhập===================================================

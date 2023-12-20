@@ -14,7 +14,7 @@ namespace Api.GiaDungPlus.Controllers
         {
             _hoaDonBusiness = hoaDonBusiness;
         }
-        [Route("hoadonban-get-by-id/id:")]
+        [Route("hoadonban-get-by-id/{id}:")]
         [HttpGet]
         public HoaDonBanModel GetDataByIDBan(int id)
         {
@@ -28,42 +28,42 @@ namespace Api.GiaDungPlus.Controllers
             return model;
         }
         [Route("update-HoaDonBan")]
-        [HttpPost]
+        [HttpPut]
         public HoaDonBanModel UpdateItemBan([FromBody] HoaDonBanModel model)
         {
             _hoaDonBusiness.UpdateBan(model);
             return model;
         }
         [Route("delete-HoaDonBan")]
-        [HttpPost]
+        [HttpDelete]
         public HoaDonBanModel DeleteItemBan([FromBody] HoaDonBanModel model)
         {
             _hoaDonBusiness.DeleteBan(model);
             return model;
         }
 
-        [Route("hoadonnhap-get-by-id/id:")]
+        [Route("hoadonnhap-get-by-id/{id}:")]
         [HttpGet]
         public HoaDonNhapModel GetDataByIDNhap(int id)
         {
             return _hoaDonBusiness.GetDataByIDNhap(id);
         }
-        [Route("create-HoaDonBan")]
+        [Route("create-HoaDonNhap")]
         [HttpPost]
         public HoaDonNhapModel CreateItemNhap([FromBody] HoaDonNhapModel model)
         {
             _hoaDonBusiness.CreateNhap(model);
             return model;
         }
-        [Route("update-HoaDonBan")]
-        [HttpPost]
+        [Route("update-HoaDonNhap")]
+        [HttpPut]
         public HoaDonNhapModel UpdateItemNhap([FromBody] HoaDonNhapModel model)
         {
             _hoaDonBusiness.UpdateNhap(model);
             return model;
         }
-        [Route("delete-HoaDonBan")]
-        [HttpPost]
+        [Route("delete-HoaDonNhap")]
+        [HttpDelete]
         public HoaDonNhapModel DeleteItemNhap([FromBody] HoaDonNhapModel model)
         {
             _hoaDonBusiness.DeleteNhap(model);

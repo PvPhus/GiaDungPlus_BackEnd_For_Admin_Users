@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Api.GiaDungPlus")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af100d910464125e9130431a71f464c74e01d2bf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Api.GiaDungPlus")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Api.GiaDungPlus")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

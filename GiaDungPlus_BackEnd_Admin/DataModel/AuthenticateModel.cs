@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 namespace DataModel
 {
     public class AuthenticateModel
-    {
-        public int MaTaiKhoan { get; set; }
+    {       
         [Required]
-        public string? TenTaiKhoan { get; set; }
+        public string Username { get; set; }
+
         [Required]
-        public string? MatKhau { get; set; }
-
-        public string? LoaiTaiKhoan { get; set; }
-
-        public int? MaNhanVien { get; set; }
-
-        public int? MaKhachHang { get; set; }
+        public string Password { get; set; }
     }
 
     public class AppSettings

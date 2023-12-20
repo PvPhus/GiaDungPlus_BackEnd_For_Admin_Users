@@ -4,7 +4,9 @@ using DataAccessLayer;
 using DataAccessLayer.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
+using System.Net.NetworkInformation;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +24,10 @@ builder.Services.AddTransient<IHoaDonRepository, HoaDonRepository>();
 builder.Services.AddTransient<IHoaDonBusiness, HoaDonBusiness>();
 builder.Services.AddTransient<IDoGiaDungRepository, DoGiaDungRepository>();
 builder.Services.AddTransient<IDoGiaDungBusiness, DoGiaDungBusiness>();
-
+builder.Services.AddTransient<INhanVienRepository, NhanVienRepository>();
+builder.Services.AddTransient<INhanVienBusiness, NhanVienBusiness>();
+builder.Services.AddTransient<ITaiKhoanRepository, TaiKhoanRepository>();
+builder.Services.AddTransient<ITaiKhoanBusiness, TaiKhoanBusiness>();
 
 // configure strongly typed settings objects
 IConfiguration configuration = builder.Configuration;

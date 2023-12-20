@@ -32,9 +32,9 @@ namespace BusinessLogicLayer
         {
             return _res.Delete(model);
         }
-        public List<KhachHangModel> SearchKhachHang(int pageIndex, int pageSize, out long total, string nameKH)
+        public List<KhachHangModel> SearchKhachHang(int pageIndex, int pageSize, out long total, string nameKH, string diaChi)
         {
-            return _res.SearchKhachHang(pageIndex, pageSize, out total, nameKH);
+            return _res.SearchKhachHang(pageIndex, pageSize, out total, nameKH, diaChi);
         }
     }
 }

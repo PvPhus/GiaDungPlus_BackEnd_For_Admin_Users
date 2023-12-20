@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.GiaDungPlus.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class KhachHangController: ControllerBase
     {
         private IKhachHangBusiness _khachHangBusiness;
@@ -13,34 +15,34 @@ namespace Api.GiaDungPlus.Controllers
         {
             _khachHangBusiness = khachHangBusiness;
         }
-        [Route("get-by-id/id:")]
+        [Route("get-by-id/{id}:")]
         [HttpGet]
         public KhachHangModel GetDataByID(int id)
         {
             return _khachHangBusiness.GetDataByID(id);
         }
-        [Route("create-DoGiaDung")]
+        [Route("create-KhachHang")]
         [HttpPost]
         public KhachHangModel CreateItem([FromBody] KhachHangModel model)
         {
             _khachHangBusiness.Create(model);
             return model;
         }
-        [Route("update-DoGiaDung")]
-        [HttpPost]
+        [Route("update-KhachHang")]
+        [HttpPut]
         public KhachHangModel UpdateItem([FromBody] KhachHangModel model)
         {
             _khachHangBusiness.Update(model);
             return model;
         }
-        [Route("delete-DoGiaDung")]
-        [HttpPost]
+        [Route("delete-KhachHang")]
+        [HttpDelete]
         public KhachHangModel DeleteItem([FromBody] KhachHangModel model)
         {
             _khachHangBusiness.Delete(model);
             return model;
         }
-        [Route("search")]
+        [Route("search-KhachHang")]
         [HttpPost]
         public IActionResult SearchKhachHang([FromBody] Dictionary<string, object> formData)
         {
@@ -53,10 +55,12 @@ namespace Api.GiaDungPlus.Controllers
 
                 var page = int.Parse(formData["page"].ToString());
                 var pageSize = int.Parse(formData["pageSize"].ToString());
-                string nameKH = formData.ContainsKey("ten_khachhang") ? Convert.ToString(formData["ten_khachhang"]) : "";
-
+                string nameKH = "";
+                if (formData.Keys.Contains("ten_khachhang") && !string.IsNullOrEmpty(Convert.ToString(formData["ten_khachhang"]))) { nameKH = Convert.ToString(formData["ten_khachhang"]); }
+                string diaChi = "";
+                if (formData.Keys.Contains("dia_chi") && !string.IsNullOrEmpty(Convert.ToString(formData["dia_chi"]))) { diaChi = Convert.ToString(formData["dia_chi"]); }               
                 long total = 0;
-                var data = _khachHangBusiness.SearchKhachHang(page, pageSize, out total, nameKH);
+                var data = _khachHangBusiness.SearchKhachHang(page, pageSize, out total, nameKH, diaChi);
 
                 return Ok(new
                 {

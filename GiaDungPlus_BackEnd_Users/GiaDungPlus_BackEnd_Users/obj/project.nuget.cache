@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOTOuGGUENvjOigTBEP2TPIc/FwlcxDmX1IoVcN9+I2kk4B43TmZRAkItQcZbgGhJs0jGkqMeZxMJ0P5uVJQlg==",
+  "dgSpecHash": "4ZJygv3vhem1f0beTzOw8ywTu9WhuBHwJH0lw7UGCmTRuqdIITfHGH62s9itOMBM9N+Gh1PVM0VI9sx/ULCuMg==",
   "success": true,
-  "projectFilePath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
+  "projectFilePath": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

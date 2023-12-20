@@ -15,11 +15,11 @@ namespace DataAccessLayer
         }
         public List<DoGiaDungModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_SanPham)
         {
-            string msgError = "Sản phẩm không tồn tại";
+            string msgError = "";
             total = 0;
             try
             {
-                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_sanpham_search",
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_san_pham_search",
                     "@page_index", pageIndex,
                     "@page_size", pageSize,
                     "@ten_sanpham", ten_SanPham                  

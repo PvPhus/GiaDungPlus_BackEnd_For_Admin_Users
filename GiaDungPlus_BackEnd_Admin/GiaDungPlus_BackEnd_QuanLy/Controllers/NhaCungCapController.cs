@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.GiaDungPlus.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class NhaCungCapController:ControllerBase
     {
         private INhaCungCapBusiness _NhaCungCapBusiness;
@@ -17,28 +19,28 @@ namespace Api.GiaDungPlus.Controllers
         {
             return _NhaCungCapBusiness.GetDataByID(id);
         }
-        [Route("create-DoGiaDung")]
+        [Route("create-NhaCungCap")]
         [HttpPost]
         public NhaCungCapModel CreateItem([FromBody] NhaCungCapModel model)
         {
             _NhaCungCapBusiness.Create(model);
             return model;
         }
-        [Route("update-DoGiaDung")]
-        [HttpPost]
+        [Route("update-NhaCungCap")]
+        [HttpPut]
         public NhaCungCapModel UpdateItem([FromBody] NhaCungCapModel model)
         {
             _NhaCungCapBusiness.Update(model);
             return model;
         }
-        [Route("delete-DoGiaDung")]
-        [HttpPost]
+        [Route("delete-NhaCungCap")]
+        [HttpDelete]
         public NhaCungCapModel DeleteItem([FromBody] NhaCungCapModel model)
         {
             _NhaCungCapBusiness.Delete(model);
             return model;
         }
-        [Route("search")]
+        [Route("search-NhaCungCap")]
         [HttpPost]
         public IActionResult SearchNhaCungCap([FromBody] Dictionary<string, object> formData)
         {

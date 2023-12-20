@@ -28,6 +28,25 @@ namespace BusinessLogicLayer
         {
             return _res.Delete(model);
         }
-
+        public List<DoGiaDungModel> GetAllProducts()
+        {
+            return _res.GetAllProducts();
+        }
+        public bool CreateL(LoaiDoGiaDung model)
+        {
+            return _res.CreateL(model);
+        }
+        public bool UpdateL(LoaiDoGiaDung model)
+        {
+            return _res.UpdateL(model);
+        }
+        public bool DeleteL(LoaiDoGiaDung model)
+        {
+            return _res.DeleteL(model);
+        }
+        public List<LoaiDoGiaDung> GetAllCategory()
+        {
+            return _res.GetAllCategory();
+        }
     }
 }

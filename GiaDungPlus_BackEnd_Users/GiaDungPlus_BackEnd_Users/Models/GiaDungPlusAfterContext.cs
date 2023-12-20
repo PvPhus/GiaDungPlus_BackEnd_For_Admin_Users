@@ -192,11 +192,11 @@ public partial class GiaDungPlusAfterContext : DbContext
 
         modelBuilder.Entity<TaiKhoan>(entity =>
         {
-            entity.HasKey(e => e.MaTaiKhoan).HasName("PK__TaiKhoan__AD7C6529CA74899A");
+            entity.HasKey(e => e.MaTaiKhoan).HasName("PK__TaiKhoan__AD7C652947B2E63D");
 
             entity.ToTable("TaiKhoan");
 
-            entity.HasIndex(e => e.TenTaiKhoan, "UQ__TaiKhoan__B106EAF83CA2311B").IsUnique();
+            entity.HasIndex(e => e.TenTaiKhoan, "UQ__TaiKhoan__B106EAF8BB5E70B5").IsUnique();
 
             entity.Property(e => e.MaTaiKhoan).ValueGeneratedNever();
             entity.Property(e => e.LoaiTaiKhoan).HasMaxLength(20);
@@ -205,11 +205,11 @@ public partial class GiaDungPlusAfterContext : DbContext
 
             entity.HasOne(d => d.MaKhachHangNavigation).WithMany(p => p.TaiKhoans)
                 .HasForeignKey(d => d.MaKhachHang)
-                .HasConstraintName("FK__TaiKhoan__MaKhac__0C85DE4D");
+                .HasConstraintName("FK__TaiKhoan__MaKhac__308E3499");
 
             entity.HasOne(d => d.MaNhanVienNavigation).WithMany(p => p.TaiKhoans)
                 .HasForeignKey(d => d.MaNhanVien)
-                .HasConstraintName("FK__TaiKhoan__MaNhan__0B91BA14");
+                .HasConstraintName("FK__TaiKhoan__MaNhan__2F9A1060");
         });
 
         OnModelCreatingPartial(modelBuilder);

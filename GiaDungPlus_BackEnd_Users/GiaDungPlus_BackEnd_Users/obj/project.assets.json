@@ -3760,11 +3760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
+      "projectUniqueName": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
       "projectName": "Api.GiaDungPlus_BackEnd_Users",
-      "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
+      "projectPath": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\Api.GiaDungPlus_BackEnd_Users.csproj",
       "packagesPath": "C:\\Users\\Vu Phong Phu\\.nuget\\packages\\",
-      "outputPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\obj\\",
+      "outputPath": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\GiaDungPlus_BackEnd_Users\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vu Phong Phu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3781,11 +3781,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
-              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
+            "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\BusinessLogicLayer\\BusinessLogicLayer.csproj": {
+              "projectPath": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\BusinessLogicLayer\\BusinessLogicLayer.csproj"
             },
-            "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\DataModel\\DataModel.csproj": {
-              "projectPath": "D:\\BaiTapLonWeb-FontEnd-BackEnd\\GiaDungPlus_BackEnd_Users\\DataModel\\DataModel.csproj"
+            "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\DataModel\\DataModel.csproj": {
+              "projectPath": "D:\\WebSiteGiaDungPlus-FontEnd-BackEnd\\BackEnd\\GiaDungPlus_BackEnd_Users\\DataModel\\DataModel.csproj"
             }
           }
         }
