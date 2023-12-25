@@ -14,6 +14,7 @@ namespace BusinessLogicLayer
         bool Update(DoGiaDungModel model);
         bool Delete(DoGiaDungModel model);
         List<DoGiaDungModel> GetAllProducts();
+        LoaiDoGiaDung GetChiTietLoaiDoGiadung(int id);
         bool CreateL(LoaiDoGiaDung model);
         bool UpdateL(LoaiDoGiaDung model);
         bool DeleteL(LoaiDoGiaDung model);

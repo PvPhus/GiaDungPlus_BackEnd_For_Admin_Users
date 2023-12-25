@@ -117,5 +117,23 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+        public List<KhachHangModel> GetAllKhachHang()
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _databaseHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_get_all_khachhang");
+
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+
+                return dt.ConvertTo<KhachHangModel>().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
     }
 }

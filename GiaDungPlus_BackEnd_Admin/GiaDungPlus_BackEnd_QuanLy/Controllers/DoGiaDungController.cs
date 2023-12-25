@@ -93,6 +93,12 @@ namespace Api.GiaDungPlus.Controllers
             var products = _sanPhamBusiness.GetAllProducts();
             return Ok(products);
         }
+        [Route("get-by-id-loai/{id}:")]
+        [HttpGet]
+        public LoaiDoGiaDung GetDatabyIDLoai(int id)
+        {
+            return _sanPhamBusiness.GetChiTietLoaiDoGiadung(id);
+        }
         [Route("create-LoaiDoGiaDung")]
         [HttpPost]
         public LoaiDoGiaDung CreateL([FromBody] LoaiDoGiaDung model)

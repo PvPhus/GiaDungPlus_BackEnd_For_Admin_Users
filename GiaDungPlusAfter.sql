@@ -51,7 +51,6 @@ CREATE TABLE LoaiDoGiaDung (
     TenLoai NVARCHAR(50),
 	SoLuongLoaiTon INT
 );
-
 -- Bảng Nhân Viên
 CREATE TABLE NhanVien (
     MaNhanVien INT PRIMARY KEY,
@@ -509,7 +508,19 @@ AS
 BEGIN
     DELETE FROM LoaiDoGiaDung WHERE MaLoai = @MaLoai;
 END;
-
+--LOẠI ĐỒ GIA DỤNG - GET BY ID--
+CREATE PROCEDURE [dbo].[sp_loai_san_pham_get_by_id](@MaLoai int)
+AS
+    BEGIN
+        SELECT s.*, 
+        (
+            SELECT top 6 sp.*
+            FROM LoaiDoGiaDung AS sp
+            WHERE sp.TenLoai = s.TenLoai FOR JSON PATH
+        ) AS list_json_loaisanphamlienquan
+        FROM LoaiDoGiaDung AS s
+        WHERE  s.MaLoai = @MaLoai;
+    END;
 --===================================================================================================================================
 --===================================================Store Procedures-Hóa Đơn Nhập===================================================
 --HÓA ĐƠN NHẬP - GET BY ID
@@ -1054,6 +1065,13 @@ AS
                         DROP TABLE #Results1; 
         END;
     END;
+---Get all Khách hàng----
+CREATE PROCEDURE [dbo].[sp_get_all_khachhang]
+AS
+BEGIN
+    SELECT * FROM KhachHang;
+END;
+
 --==================================Stored Procedures Nha Cung Cap===================================--
 --GET BY ID NHA CUNG CAP------
 CREATE PROCEDURE [dbo].[sp_nha_cung_cap_get_by_id](@MaNhaCungCap int)

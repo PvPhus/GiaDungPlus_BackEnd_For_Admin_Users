@@ -73,7 +73,14 @@ namespace Api.GiaDungPlus.Controllers
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-            }
+            }         
+        }
+        [Route("get_all_KhachHang")]
+        [HttpGet]
+        public IActionResult GetAllKhachHang()
+        {
+            var khachhang = _khachHangBusiness.GetAllKhachHang();
+            return Ok(khachhang);
         }
     }
 }

@@ -14,5 +14,6 @@ namespace BusinessLogicLayer.Interfaces
         bool Update(KhachHangModel model);
         bool Delete(KhachHangModel model);
         public List<KhachHangModel> SearchKhachHang(int pageIndex, int pageSize, out long total, string nameKH, string diaChi);
+        List<KhachHangModel> GetAllKhachHang();
     }
 }

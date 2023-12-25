@@ -109,6 +109,22 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+        public LoaiDoGiaDung GetChiTietLoaiDoGiaDung(int id)
+        {
+            string msgError = "";
+            try
+            {
+                var dt = _dbHelper.ExecuteSProcedureReturnDataTable(out msgError, "sp_loai_san_pham_get_by_id",
+                     "@MaLoai", id);
+                if (!string.IsNullOrEmpty(msgError))
+                    throw new Exception(msgError);
+                return dt.ConvertTo<LoaiDoGiaDung>().FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public List<LoaiDoGiaDung> GetAllCategory()
         {
             string msgError = "";

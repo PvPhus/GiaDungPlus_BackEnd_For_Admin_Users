@@ -36,5 +36,9 @@ namespace BusinessLogicLayer
         {
             return _res.SearchKhachHang(pageIndex, pageSize, out total, nameKH, diaChi);
         }
+        public List<KhachHangModel> GetAllKhachHang()
+        {
+            return _res.GetAllKhachHang();
+        }
     }
 }

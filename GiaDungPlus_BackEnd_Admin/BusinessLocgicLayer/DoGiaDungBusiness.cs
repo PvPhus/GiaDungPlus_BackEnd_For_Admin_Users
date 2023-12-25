@@ -32,6 +32,10 @@ namespace BusinessLogicLayer
         {
             return _res.GetAllProducts();
         }
+        public LoaiDoGiaDung GetChiTietLoaiDoGiadung(int id)
+        {
+            return _res.GetChiTietLoaiDoGiaDung(id);
+        }
         public bool CreateL(LoaiDoGiaDung model)
         {
             return _res.CreateL(model);
