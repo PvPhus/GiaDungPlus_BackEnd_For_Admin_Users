@@ -16,4 +16,10 @@ namespace DataModel
         public String HinhAnh { get; set; }    
         public int MaLoai { get; set; }
     }
+    public class LoaiDoGiaDung
+    {
+        public int MaLoai { set; get; }
+        public string TenLoai { set; get; }
+        public int SoLuongLoaiTon { get; set; }
+    }
 }

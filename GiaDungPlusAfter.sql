@@ -37,11 +37,12 @@ CREATE TABLE ChiTietHoaDonNhap (
 -- Bảng Đồ Gia Dụng
 CREATE TABLE DoGiaDung (
     MaSanPham INT PRIMARY KEY,
+	MaLoai INT,
     TenSanPham NVARCHAR(255),
     Gia DECIMAL(18, 0),
     MoTa NVARCHAR(MAX),
     HinhAnh NVARCHAR(500),
-    MaLoai INT,
+    TenLoai NVARCHAR(50),
     FOREIGN KEY (MaLoai) REFERENCES LoaiDoGiaDung(MaLoai)
 );
 
@@ -148,40 +149,40 @@ VALUES
     (7, 7, '2023-01-07', 9000000),
     (8, 8, '2023-01-08', 11000000),
     (9, 9, '2023-01-09', 13000000),
-    (10, 10, '2023-01-10', 16000000),
-    (11, 11, '2023-01-11', 18000000),
-    (12, 12, '2023-01-12', 20000000),
-    (13, 13, '2023-01-13', 22000000),
-    (14, 14, '2023-01-14', 24000000),
-    (15, 15, '2023-01-15', 26000000),
-    (16, 16, '2023-01-16', 28000000),
-    (17, 17, '2023-01-17', 30000000),
-    (18, 18, '2023-01-18', 32000000),
-    (19, 19, '2023-01-19', 34000000),
-    (20, 20, '2023-01-20', 36000000);
+    (10, 10, '2023-01-10', 16000000);
+    --(11, 11, '2023-01-11', 18000000),
+    --(12, 12, '2023-01-12', 20000000),
+    --(13, 13, '2023-01-13', 22000000),
+    --(14, 14, '2023-01-14', 24000000),
+    --(15, 15, '2023-01-15', 26000000),
+    --(16, 16, '2023-01-16', 28000000),
+    --(17, 17, '2023-01-17', 30000000),
+    --(18, 18, '2023-01-18', 32000000),
+    --(19, 19, '2023-01-19', 34000000),
+    --(20, 20, '2023-01-20', 36000000);
 ----INSERT VÀO BẢNG CHI TIẾT HÓA ĐƠN NHẬP
-INSERT INTO ChiTietHoaDonNhap (MaChiTiet, MaHoaDonNhap, MaSanPham, SoLuong, DonGia, ThanhTien)
+INSERT INTO ChiTietHoaDonNhap (MaHoaDonNhap, MaSanPham, SoLuong, DonGia, ThanhTien)
 VALUES
-    (1, 1, 1, 5, 1000000, 5000000),
-    (2, 2, 2, 7, 900000, 6300000),
-    (3, 3, 3, 10, 1200000, 12000000),
-    (4, 4, 4, 8, 1000000, 8000000),
-    (5, 5, 5, 12, 1500000, 18000000),
-    (6, 6, 6, 15, 2000000, 30000000),
-    (7, 7, 7, 9, 800000, 7200000),
-    (8, 8, 8, 11, 1100000, 12100000),
-    (9, 9, 9, 13, 1300000, 16900000),
-    (10, 10, 10, 16, 1600000, 25600000),
-    (11, 11, 11, 18, 1800000, 32400000),
-    (12, 12, 12, 20, 2000000, 40000000),
-    (13, 13, 13, 22, 2200000, 48400000),
-    (14, 14, 14, 24, 2400000, 57600000),
-    (15, 15, 15, 26, 2600000, 67600000),
-    (16, 16, 16, 28, 2800000, 78400000),
-    (17, 17, 17, 30, 3000000, 90000000),
-    (18, 18, 18, 32, 3200000, 102400000),
-    (19, 19, 19, 34, 3400000, 115600000),
-    (20, 20, 20, 36, 3600000, 129600000);
+    (1, 1, 5, 1000000, 5000000),
+    (2, 2, 7, 900000, 6300000),
+    (3, 3, 10, 1200000, 12000000),
+    (4, 4, 8, 1000000, 8000000),
+    (5, 5, 12, 1500000, 18000000),
+    (6, 6, 15, 2000000, 30000000),
+    (7, 7, 9, 800000, 7200000),
+    (8, 8, 11, 1100000, 12100000),
+    (9, 9, 13, 1300000, 16900000),
+    (10, 10, 16, 1600000, 25600000);
+    --(11, 11, 18, 1800000, 32400000),
+    --(12, 12, 20, 2000000, 40000000),
+    --(13, 13, 22, 2200000, 48400000),
+    --(14, 14, 24, 2400000, 57600000),
+    --(15, 15, 26, 2600000, 67600000),
+    --(16, 16, 28, 2800000, 78400000),
+    --(17, 17, 30, 3000000, 90000000),
+    --(18, 18, 32, 3200000, 102400000),
+    --(19, 19, 34, 3400000, 115600000),
+    --(20, 20, 36, 3600000, 129600000);
 ----INSERT VÀO BẢNG NHÂN VIÊN
 INSERT INTO NhanVien (MaNhanVien, TenNhanVien, ChucVu, NgaySinh, DiaChi, SoDienThoai)
 VALUES
@@ -206,28 +207,28 @@ VALUES
     (19, N'Lê Văn U', N'Nhân viên bán hàng', '1990-05-01', N'Địa chỉ U', '0123456789'),
     (20, N'Đỗ Thị V', N'Nhân viên bảo vệ', '1997-04-14', N'Địa chỉ V', '0987654321');
 ----INSERT VÀO BẢNG ĐỒ GIA DỤNG
-INSERT INTO DoGiaDung (MaSanPham, TenSanPham, Gia, MoTa, HinhAnh, MaLoai)
+INSERT INTO DoGiaDung (MaSanPham, MaLoai, TenSanPham, Gia, MoTa, HinhAnh, TenLoai)
 VALUES
-    (1, 'Đèn LED thông minh Philips Hue', 800000, 'Đèn LED thông minh có thể điều chỉnh màu sắc', '/images/den-philips-hue.jpg', 1),
-    (2, 'Tủ lạnh LG Inverter', 10000000, 'Tủ lạnh tiết kiệm năng lượng', '/images/tu-lanh-lg.jpg', 2),
-    (3, 'Máy lọc không khí Xiaomi', 2000000, 'Máy lọc không khí thông minh', '/images/may-loc-khong-khi-xiaomi.jpg', 3),
-    (4, 'Bếp từ', 15000000, 'Bếp từ siêu tiết kiệm điện năng', '', 4),
-    (5, 'Máy hút bụi Series 7', 8000000, 'Máy hút bụi thông minh của Apple', '', 5),
-    (6, 'Lò vi sóng', 12000000, 'Lò vi sóng công nghệ QLED với độ phân giải 4K', '', 6),
-    (7, 'Máy lọc nước', 25000000, 'Máy lọc nước khoáng thanh mát', '', 7),
-    (8, 'Bếp điện từ', 5000000, 'Bếp điện từ cao cấp', '', 8),
-    (9, 'Robot hút bụi', 3500000, 'Robot hút bụi thông minh', '', 9),
-    (10, 'Máy pha cà phê', 12000000, 'Máy pha cà phê tự động', '', 10),
-    (11, 'Quạt thông minh', 1500000, 'Quạt thông minh có thể điều khiển từ xa', '', 11),
-    (12, 'Máy giặt', 7000000, 'Máy giặt công nghệ inverter', '', 12),
-    (13, 'Điều hòa thông minh', 12000000, 'Điều hòa thông minh có điều khiển bằng giọng nói', '', 13),
-    (14, 'Camera an ninh', 2500000, 'Camera an ninh không dây', '', 14),
-    (15, 'Máy sưởi', 800000, 'Máy sưởi tiết kiệm năng lượng', '', 15),
-    (16, 'Ổ cắm thông minh', 500000, 'Ổ cắm thông minh có thể điều khiển từ xa', '', 16),
-    (17, 'Thiết bị điều khiển từ xa', 200000, 'Thiết bị điều khiển từ xa thông minh', '', 17),
-    (18, 'Máy là', 1500000, 'Máy là công nghệ inverter', '', 18),
-    (19, 'Dụng cụ nhà bếp', 300000, 'Bộ dụng cụ nhà bếp chất lượng cao', '', 19),
-    (20, 'Phụ kiện điện tử gia dụng', 100000, 'Phụ kiện đa dạng cho thiết bị điện tử', '', 20);
+    (1, 1, 'Đèn LED thông minh Philips Hue' , 800000, 'Đèn LED thông minh có thể điều chỉnh màu sắc', '/images/den-philips-hue.jpg', 'Đèn thông minh'),
+    (2, 2, 'Tủ lạnh LG Inverter', 10000000, 'Tủ lạnh tiết kiệm năng lượng', '/images/tu-lanh-lg.jpg', 'Tủ lạnh'),
+    (3, 3, 'Máy lọc không khí Xiaomi', 2000000, 'Máy lọc không khí thông minh', '/images/may-loc-khong-khi-xiaomi.jpg', 'Máy lọc không khí'),
+    (4, 4, 'Bếp từ', 15000000, 'Bếp từ siêu tiết kiệm điện năng', '', 'Bếp từ'),
+    (5, 5, 'Máy hút bụi Series 7', 8000000, 'Máy hút bụi thông minh của Apple', '', 'Máy hút bụi'),
+    (6, 6, 'Lò vi sóng', 12000000, 'Lò vi sóng công nghệ QLED với độ phân giải 4K', '', 'Lò vi sóng'),
+    (7, 7, 'Máy lọc nước', 25000000, 'Máy lọc nước khoáng thanh mát', '', 'Máy lọc nước'),
+    (8, 8, 'Bếp điện từ', 5000000, 'Bếp điện từ cao cấp', '', 'Bếp điện từ'),
+    (9, 9, 'Robot hút bụi', 3500000, 'Robot hút bụi thông minh', '', 'Robot hút bụi'),
+    (10, 10, 'Máy pha cà phê', 12000000, 'Máy pha cà phê tự động', '', 'Máy pha cà phê');
+    --(11, 'Quạt thông minh', 1500000, 'Quạt thông minh có thể điều khiển từ xa', '', 11),
+    --(12, 'Máy giặt', 7000000, 'Máy giặt công nghệ inverter', '', 12),
+    --(13, 'Điều hòa thông minh', 12000000, 'Điều hòa thông minh có điều khiển bằng giọng nói', '', 13),
+    --(14, 'Camera an ninh', 2500000, 'Camera an ninh không dây', '', 14),
+    --(15, 'Máy sưởi', 800000, 'Máy sưởi tiết kiệm năng lượng', '', 15),
+    --(16, 'Ổ cắm thông minh', 500000, 'Ổ cắm thông minh có thể điều khiển từ xa', '', 16),
+    --(17, 'Thiết bị điều khiển từ xa', 200000, 'Thiết bị điều khiển từ xa thông minh', '', 17),
+    --(18, 'Máy là', 1500000, 'Máy là công nghệ inverter', '', 18),
+    --(19, 'Dụng cụ nhà bếp', 300000, 'Bộ dụng cụ nhà bếp chất lượng cao', '', 19),
+    --(20, 'Phụ kiện điện tử gia dụng', 100000, 'Phụ kiện đa dạng cho thiết bị điện tử', '', 20);
 ----INSERT VÀO BẢNG LOẠI ĐỒ GIA DỤNG
 INSERT INTO LoaiDoGiaDung (MaLoai, TenLoai)
 VALUES
@@ -363,11 +364,12 @@ BEGIN
         SELECT
             (ROW_NUMBER() OVER (ORDER BY TenSanPham ASC)) AS RowNumber,
             s.MaSanPham,
+			s.MaLoai,
             s.TenSanPham,
             s.Gia,
             s.MoTa,
             s.HinhAnh,
-			s.MaLoai
+			s.TenLoai
         INTO #Results1
         FROM DoGiaDung AS s
         WHERE
@@ -387,11 +389,12 @@ BEGIN
         SELECT
             (ROW_NUMBER() OVER (ORDER BY TenSanPham ASC)) AS RowNumber,
             s.MaSanPham,
+			s.MaLoai,
             s.TenSanPham,
             s.Gia,
             s.MoTa,
             s.HinhAnh,
-			s.MaLoai
+			s.TenLoai
         INTO #Results2
         FROM DoGiaDung AS s
         WHERE
@@ -407,34 +410,37 @@ END;
 --SẢN PHẨM - CREATE
 CREATE PROCEDURE [dbo].[sp_san_pham_create](
 @MaSanPham INT,
+@MaLoai INT,
 @TenSanPham nvarchar(100),
 @Gia decimal(18, 0),
 @MoTa nvarchar(MAX),
 @HinhAnh varchar(500),
-@MaLoai INT
+@TenLoai nvarchar(50)
 )
 AS
     BEGIN
-       insert into DoGiaDung(MaSanPham,TenSanPham,Gia,MoTa,HinhAnh,MaLoai)
-	   values(@MaSanPham,@TenSanPham,@Gia,@MoTa,@HinhAnh,@MaLoai);
+       insert into DoGiaDung(MaSanPham,MaLoai,TenSanPham,Gia,MoTa,HinhAnh,TenLoai)
+	   values(@MaSanPham,@MaLoai,@TenSanPham,@Gia,@MoTa,@HinhAnh,@TenLoai);
     END;
 --Sản Phẩm - Update.
 CREATE PROCEDURE [dbo].[sp_san_pham_update](
     @MaSanPham INT,
+	@MaLoai INT,
     @TenSanPham NVARCHAR(100),
     @Gia DECIMAL(18, 0),
     @MoTa NVARCHAR(MAX),
     @HinhAnh VARCHAR(500),
-	@MaLoai INT
+	@TenLoai NVARCHAR(50)
 )
 AS
 BEGIN   
     UPDATE DoGiaDung
     SET TenSanPham = ISNULL(@TenSanPham, TenSanPham),
         Gia = ISNULL(@Gia, Gia),
+		MaLoai = ISNULL(@MaLoai, MaLoai),
         MoTa = ISNULL(@MoTa, MoTa),
         HinhAnh = ISNULL(@HinhAnh, HinhAnh),
-		MaLoai = ISNULL(@MaLoai, MaLoai)
+		TenLoai = ISNULL(@TenLoai, TenLoai)
     WHERE MaSanPham = @MaSanPham;
 END;
 

@@ -18,5 +18,14 @@ namespace BusinessLogicLayer
         {        
             return _res.SearchProducts(pageIndex,pageSize,out total,ten_sanpham);
         }
+        public List<DoGiaDungModel> GetAllProducts()
+        {
+            return _res.GetAllProducts();
+        }
+        public List<LoaiDoGiaDung> GetAllCategory()
+        {
+            return _res.GetAllCategory();
+        }
+
     }
 }

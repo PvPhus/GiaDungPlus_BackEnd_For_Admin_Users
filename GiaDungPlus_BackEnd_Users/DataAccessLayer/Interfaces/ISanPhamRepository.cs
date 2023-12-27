@@ -11,5 +11,7 @@ namespace DataAccessLayer.Interfaces
     public partial interface ISanPhamRepository
     { 
         public List<DoGiaDungModel> SearchProducts(int pageIndex, int pageSize, out long total, string ten_sanpham);
+        List<LoaiDoGiaDung> GetAllCategory();
+        List<DoGiaDungModel> GetAllProducts();
     }
 }

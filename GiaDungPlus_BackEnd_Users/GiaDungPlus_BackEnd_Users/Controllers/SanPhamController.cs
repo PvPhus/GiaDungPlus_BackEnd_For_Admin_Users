@@ -14,7 +14,7 @@ namespace Api.GiaDungPlus.Controllers
         {
             _sanPhamBusiness = sanPhamBusiness;
         }
-        [Route("search")]
+        [Route("search-products")]
         [HttpPost]
         public IActionResult Search([FromBody] Dictionary<string, object> formData)
         {
@@ -45,5 +45,20 @@ namespace Api.GiaDungPlus.Controllers
                 throw new Exception(ex.Message);             
             }
         }
+        [Route("get_all_products")]
+        [HttpGet]
+        public IActionResult GetAllProducts()
+        {
+            var products = _sanPhamBusiness.GetAllProducts();
+            return Ok(products);
+        }
+        [Route("get_all_categorys")]
+        [HttpGet]
+        public IActionResult GetAllCategory()
+        {
+            var catetory = _sanPhamBusiness.GetAllCategory();
+            return Ok(catetory);
+        }
+
     }
 }
