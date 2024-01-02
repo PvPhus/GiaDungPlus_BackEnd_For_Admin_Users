@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace DataModel
     public class LoaiDoGiaDung
     {
         public int MaLoai { set; get; }
-        public string TenLoai { set; get; }
+        public string TenLoai { get; set; }
         public int SoLuongLoaiTon { get; set; }
     }
 }
