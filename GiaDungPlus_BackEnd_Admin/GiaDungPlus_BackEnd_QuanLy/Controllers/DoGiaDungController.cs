@@ -34,13 +34,27 @@ namespace Api.GiaDungPlus.Controllers
             _sanPhamBusiness.Update(model);
             return model;
         }
-        [Route("delete-DoGiaDung")]
+        //[Route("delete-DoGiaDung")]
+        //[HttpDelete]
+        //public DoGiaDungModel DeleteItem([FromBody] DoGiaDungModel model)
+        //{
+        //    _sanPhamBusiness.Delete(model);
+        //    return model;
+        //}
+        [Route("delete-DoGiaDung/{maSanPham}")]
         [HttpDelete]
-        public DoGiaDungModel DeleteItem([FromBody] DoGiaDungModel model)
+        public DoGiaDungModel DeleteItem(int maSanPham)
         {
-            _sanPhamBusiness.Delete(model);
-            return model;
+            DoGiaDungModel modelToDelete = _sanPhamBusiness.GetChiTietDoGiadung(maSanPham);
+
+            if (modelToDelete != null)
+            {
+                _sanPhamBusiness.Delete(modelToDelete);
+            }
+
+            return modelToDelete;
         }
+
         [NonAction]
         public string CreatePathFile(string RelativePathFileName)
         {

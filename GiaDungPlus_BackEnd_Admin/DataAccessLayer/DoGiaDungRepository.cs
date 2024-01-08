@@ -55,7 +55,7 @@ namespace DataAccessLayer
         }
         public bool Update(DoGiaDungModel model)
         {
-            string msgError = "Sửa không thành công!";
+            string msgError = "Sửa không thành công!"; 
             try
             {
                 var result = _dbHelper.ExecuteScalarSProcedureWithTransaction(out msgError, "sp_san_pham_update",

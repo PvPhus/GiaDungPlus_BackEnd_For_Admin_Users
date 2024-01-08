@@ -35,13 +35,25 @@ namespace Api.GiaDungPlus.Controllers
             _khachHangBusiness.Update(model);
             return model;
         }
-        [Route("delete-KhachHang")]
+        [Route("delete-KhachHang/{maKhachHang}")]
         [HttpDelete]
-        public KhachHangModel DeleteItem([FromBody] KhachHangModel model)
+        public KhachHangModel DeleteItem(int maKhachHang)
         {
-            _khachHangBusiness.Delete(model);
-            return model;
+            KhachHangModel modelToDelete = _khachHangBusiness.GetDataByID(maKhachHang);
+
+            if (modelToDelete != null)
+            {
+                _khachHangBusiness.Delete(modelToDelete);
+            }
+            return modelToDelete;
         }
+        //[Route("delete-KhachHang")]
+        //[HttpDelete]
+        //public KhachHangModel DeleteItem([FromBody] KhachHangModel model)
+        //{
+        //    _khachHangBusiness.Delete(model);
+        //    return model;
+        //}
         [Route("search-KhachHang")]
         [HttpPost]
         public IActionResult SearchKhachHang([FromBody] Dictionary<string, object> formData)
