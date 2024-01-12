@@ -450,9 +450,9 @@ CREATE PROCEDURE [dbo].[sp_san_pham_delete](
 )
 AS
 BEGIN
-    DELETE FROM DoGiaDung WHERE MaSanPham = @MaSanPham;
+    DELETE FROM DoGiaDung 
+	WHERE MaSanPham = @MaSanPham;
 END;
-
 --SẢN PHẨM - GET BY ID--
 CREATE PROCEDURE [dbo].[sp_sanpham_get_by_id](@MaSanPham int)
 AS
@@ -754,6 +754,26 @@ BEGIN
         FROM #Results2;
     END;
 END;
+---Get all hóa đơn nhập----
+CREATE PROCEDURE [dbo].[sp_GetAllHoaDonNhap]
+AS
+BEGIN
+    SELECT 
+        H.MaHoaDonNhap,
+        H.MaNhanVien,
+        H.MaNhaCungCap,
+        H.NgayNhap,
+        H.TongTien,
+        C.MaSanPham,
+        C.SoLuong,
+        C.DonGia,
+        C.ThanhTien
+    FROM 
+        HoaDonNhap H
+    INNER JOIN 
+        ChiTietHoaDonNhap C ON H.MaHoaDonNhap = C.MaHoaDonNhap;
+END;
+
 
 --=====================================================Store Procedures-Hóa Đơn Bán=====================================--
 --HÓA ĐƠN BÁN - GET BY ID
@@ -975,7 +995,25 @@ BEGIN
         FROM #Results2;
     END;
 END;
-
+---Get all hóa đơn bán----
+CREATE PROCEDURE [dbo].[sp_GetAllHoaDonBan]
+AS
+BEGIN
+    SELECT 
+        H.MaHoaDonBan,
+        H.MaNhanVien,
+        H.MaKhachHang,
+        H.NgayBan,
+        C.MaSanPham,
+        C.SoLuong,
+        C.DonGia,
+        C.ThanhTien
+    FROM 
+        HoaDonBan H
+    INNER JOIN 
+        ChiTietHoaDonBan C ON H.MaHoaDonBan = C.MaHoaDonBan;
+END;
+exec sp_GetAllHoaDonBan
 --===================================================Store-Procedure KhachHang===========================================
 --GET BY ID KHACH HANG------
 CREATE PROCEDURE [dbo].[sp_khach_hang_get_by_id](@MaKhachHang int)
@@ -1174,6 +1212,13 @@ AS
         END;
     END;
 
+---Get all nhà cung cấp----
+CREATE PROCEDURE [dbo].[sp_get_all_nhacungcap]
+AS
+BEGIN
+    SELECT * FROM NhaCungCap;
+END;
+
 --===============================================Stored Procedure Nhan Vien======================================--
 --GET BY ID NHAN VIEN------
 CREATE PROCEDURE [dbo].[sp_nhan_vien_get_by_id](@MaNhanVien int)
@@ -1185,15 +1230,17 @@ AS
     END;
 --CREATE NHAN VIEN--
 CREATE PROCEDURE [dbo].[sp_nhan_vien_create](
-@MaNhaCungCap int,
-@TenNhaCungCap nvarchar(255),
+@MaNhanVien int,
+@TenNhanVien nvarchar(255),
+@ChucVu nvarchar(50),
+@NgaySinh date,
 @DiaChi nvarchar(255),
 @SoDienThoai nvarchar(20)
 )
 AS
     BEGIN
-       insert into NhaCungCap(MaNhaCungCap,TenNhaCungCap,DiaChi,SoDienThoai)
-	   values(@MaNhaCungCap,@TenNhaCungCap,@DiaChi,@SoDienThoai);
+       insert into NhanVien(MaNhanVien,TenNhanVien,ChucVu,NgaySinh,DiaChi,SoDienThoai)
+	   values(@MaNhanVien,@TenNhanVien,@ChucVu,@NgaySinh,@DiaChi,@SoDienThoai);
     END;
 --UPDATE NHAN VIEN--
 CREATE PROCEDURE [dbo].[sp_nhan_vien_update](
@@ -1280,7 +1327,12 @@ AS
         END;
     END;
 
-
+---Get all nhân viên----
+CREATE PROCEDURE [dbo].[sp_get_all_nhanvien]
+AS
+BEGIN
+    SELECT * FROM NhanVien;
+END;
 
 
 

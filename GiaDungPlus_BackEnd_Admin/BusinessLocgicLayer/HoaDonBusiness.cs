@@ -21,6 +21,10 @@ namespace BusinessLogicLayer
         {
             return _res.GetDataByIDBan(id);
         }
+        public List<HoaDonBanModel> GetAllBan()
+        {
+            return _res.GetAllBan();
+        }
         public bool CreateBan(HoaDonBanModel model)
         {
             return _res.CreateBan(model);
@@ -37,6 +41,10 @@ namespace BusinessLogicLayer
         public HoaDonNhapModel GetDataByIDNhap(int id)
         {
             return _res.GetDataByIDNhap(id);
+        }
+        public List<HoaDonNhapModel> GetAllNhap()
+        {
+            return _res.GetAllNhap();
         }
         public bool CreateNhap(HoaDonNhapModel model)
         {

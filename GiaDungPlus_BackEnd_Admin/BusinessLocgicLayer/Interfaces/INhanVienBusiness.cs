@@ -10,6 +10,7 @@ namespace BusinessLogicLayer.Interfaces
     public partial interface INhanVienBusiness
     {
         NhanVienModel GetDataByID(int id);
+        List<NhanVienModel> GetAllNhanVien();
         bool Create(NhanVienModel model);
         bool Update(NhanVienModel model);
         bool Delete(NhanVienModel model);

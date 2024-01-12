@@ -14,5 +14,6 @@ namespace DataAccessLayer.Interfaces
         bool Update(NhanVienModel model);
         bool Delete(NhanVienModel model);
         public List<NhanVienModel> SearchNhanVien(int pageIndex, int pageSize, out long total, string nameNV);
+        List<NhanVienModel> GetAllNhanVien();
     }
 }

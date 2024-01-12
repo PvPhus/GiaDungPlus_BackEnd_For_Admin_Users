@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Interfaces;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,13 @@ namespace Api.GiaDungPlus.Controllers
         public NhanVienModel GetDataByID(int id)
         {
             return _NhanVienBusiness.GetDataByID(id);
+        }
+        [Route("get_all_NhanVien")]
+        [HttpGet]
+        public IActionResult GetAllNhanVien()
+        {
+            var nhanviens = _NhanVienBusiness.GetAllNhanVien();
+            return Ok(nhanviens);
         }
         [Route("create-NhanVien")]
         [HttpPost]
@@ -39,6 +47,19 @@ namespace Api.GiaDungPlus.Controllers
         {
             _NhanVienBusiness.Delete(model);
             return model;
+        }
+        [Route("delete-NhanVien/{maNhanVien}")]
+        [HttpDelete]
+        public NhanVienModel DeleteItem(int maNhanVien)
+        {
+            NhanVienModel modelToDelete = _NhanVienBusiness.GetDataByID(maNhanVien);
+
+            if (modelToDelete != null)
+            {
+                _NhanVienBusiness.Delete(modelToDelete);
+            }
+
+            return modelToDelete;
         }
         [Route("search-NhanVien")]
         [HttpPost]

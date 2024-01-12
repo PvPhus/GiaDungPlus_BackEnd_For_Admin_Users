@@ -13,11 +13,13 @@ namespace DataAccessLayer.Interfaces
         bool CreateBan(HoaDonBanModel model);
         bool UpdateBan(HoaDonBanModel model);
         bool DeleteBan(HoaDonBanModel model);
+        List<HoaDonBanModel> GetAllBan();
 
 
         HoaDonNhapModel GetDataByIDNhap(int id);
         bool CreateNhap(HoaDonNhapModel model);
         bool UpdateNhap(HoaDonNhapModel model);
         bool DeleteNhap(HoaDonNhapModel model);
+        List<HoaDonNhapModel> GetAllNhap();
     }
 }

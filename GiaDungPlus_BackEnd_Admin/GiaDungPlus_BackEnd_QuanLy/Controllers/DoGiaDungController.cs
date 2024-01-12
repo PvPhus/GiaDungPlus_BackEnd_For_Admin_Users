@@ -9,7 +9,6 @@ namespace Api.GiaDungPlus.Controllers
     public class DoGiaDungController : ControllerBase
     { 
         private IDoGiaDungBusiness _sanPhamBusiness;
-        private string _path;
         public DoGiaDungController(IDoGiaDungBusiness sanPhamBusiness)
         {
             _sanPhamBusiness = sanPhamBusiness;
@@ -34,13 +33,6 @@ namespace Api.GiaDungPlus.Controllers
             _sanPhamBusiness.Update(model);
             return model;
         }
-        //[Route("delete-DoGiaDung")]
-        //[HttpDelete]
-        //public DoGiaDungModel DeleteItem([FromBody] DoGiaDungModel model)
-        //{
-        //    _sanPhamBusiness.Delete(model);
-        //    return model;
-        //}
         [Route("delete-DoGiaDung/{maSanPham}")]
         [HttpDelete]
         public DoGiaDungModel DeleteItem(int maSanPham)

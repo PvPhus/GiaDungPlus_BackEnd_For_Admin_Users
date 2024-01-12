@@ -20,6 +20,10 @@ namespace BusinessLogicLayer
         {
             return _res.GetDataByID(id);
         }
+        public List<NhanVienModel> GetAllNhanVien()
+        {
+            return _res.GetAllNhanVien();
+        }
         public bool Create(NhanVienModel model)
         {
             return _res.Create(model);

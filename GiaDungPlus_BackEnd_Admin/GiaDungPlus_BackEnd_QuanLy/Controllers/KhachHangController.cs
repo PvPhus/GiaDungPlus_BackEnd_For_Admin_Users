@@ -21,6 +21,13 @@ namespace Api.GiaDungPlus.Controllers
         {
             return _khachHangBusiness.GetDataByID(id);
         }
+        [Route("get_all_KhachHang")]
+        [HttpGet]
+        public IActionResult GetAllKhachHang()
+        {
+            var khachhang = _khachHangBusiness.GetAllKhachHang();
+            return Ok(khachhang);
+        }
         [Route("create-KhachHang")]
         [HttpPost]
         public KhachHangModel CreateItem([FromBody] KhachHangModel model)
@@ -47,13 +54,6 @@ namespace Api.GiaDungPlus.Controllers
             }
             return modelToDelete;
         }
-        //[Route("delete-KhachHang")]
-        //[HttpDelete]
-        //public KhachHangModel DeleteItem([FromBody] KhachHangModel model)
-        //{
-        //    _khachHangBusiness.Delete(model);
-        //    return model;
-        //}
         [Route("search-KhachHang")]
         [HttpPost]
         public IActionResult SearchKhachHang([FromBody] Dictionary<string, object> formData)
@@ -87,12 +87,6 @@ namespace Api.GiaDungPlus.Controllers
                 throw new Exception(ex.Message);
             }         
         }
-        [Route("get_all_KhachHang")]
-        [HttpGet]
-        public IActionResult GetAllKhachHang()
-        {
-            var khachhang = _khachHangBusiness.GetAllKhachHang();
-            return Ok(khachhang);
-        }
+        
     }
 }

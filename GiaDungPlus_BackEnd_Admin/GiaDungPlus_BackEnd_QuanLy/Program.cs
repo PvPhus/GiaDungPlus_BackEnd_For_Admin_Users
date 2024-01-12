@@ -4,9 +4,7 @@ using DataAccessLayer;
 using DataAccessLayer.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
-using System.Net.NetworkInformation;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +12,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
-// Add services to the container.
+// Thêm d?ch v? vào vùng ch?a.
 builder.Services.AddTransient<IDatabaseHelper, DatabaseHelper>();
 builder.Services.AddTransient<IKhachHangRepository, KhachHangRepository>();
 builder.Services.AddTransient<IKhachHangBusiness, KhachHangBusiness>();
@@ -29,12 +27,12 @@ builder.Services.AddTransient<INhanVienBusiness, NhanVienBusiness>();
 builder.Services.AddTransient<ITaiKhoanRepository, TaiKhoanRepository>();
 builder.Services.AddTransient<ITaiKhoanBusiness, TaiKhoanBusiness>();
 
-// configure strongly typed settings objects
+// c?u hình các ??i t??ng cài ??t ???c gõ m?nh
 IConfiguration configuration = builder.Configuration;
 var appSettingsSection = configuration.GetSection("AppSettings");
 builder.Services.Configure<AppSettings>(appSettingsSection);
 
-// configure jwt authentication
+// ??nh c?u hình xác th?c jwt
 var appSettings = appSettingsSection.Get<AppSettings>();
 var key = Encoding.ASCII.GetBytes(appSettings.Secret);
 builder.Services.AddAuthentication(x =>
@@ -55,13 +53,13 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
-// Add services to the container.
+// Thêm d?ch v? vào vùng ch?a.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
-// Configure the HTTP request pipeline.
+
+// ??nh c?u hình ???ng d?n yêu c?u HTTP.v
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

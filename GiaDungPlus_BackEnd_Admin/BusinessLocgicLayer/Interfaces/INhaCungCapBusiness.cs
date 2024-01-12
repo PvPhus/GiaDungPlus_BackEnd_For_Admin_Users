@@ -10,6 +10,7 @@ namespace BusinessLogicLayer.Interfaces
     public partial interface INhaCungCapBusiness
     {
         NhaCungCapModel GetDataByID(int id);
+        List<NhaCungCapModel> GetAllNhaCungCap();
         bool Create(NhaCungCapModel model);
         bool Update(NhaCungCapModel model);
         bool Delete(NhaCungCapModel model);

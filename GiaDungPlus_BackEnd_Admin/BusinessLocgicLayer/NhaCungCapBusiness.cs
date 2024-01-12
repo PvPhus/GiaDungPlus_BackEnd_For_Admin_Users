@@ -21,6 +21,10 @@ namespace BusinessLogicLayer
         {
             return _res.GetDataByID(id);
         }
+        public List<NhaCungCapModel> GetAllNhaCungCap()
+        {
+            return _res.GetAllNhaCungCap();
+        }
         public bool Create(NhaCungCapModel model)
         {
             return _res.Create(model);
@@ -37,5 +41,6 @@ namespace BusinessLogicLayer
         {
             return _res.SearchNCC(pageIndex, pageSize, out total, nameNCC);
         }
+
     }
 }

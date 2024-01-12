@@ -20,6 +20,13 @@ namespace Api.GiaDungPlus.Controllers
         {
             return _hoaDonBusiness.GetDataByIDBan(id);
         }
+        [Route("get_all_HoaDonBan")]
+        [HttpGet]
+        public IActionResult GetAllBan()
+        {
+            var hoadonbans = _hoaDonBusiness.GetAllBan();
+            return Ok(hoadonbans);
+        }
         [Route("create-HoaDonBan")]
         [HttpPost]
         public HoaDonBanModel CreateItemBan([FromBody] HoaDonBanModel model)
@@ -34,12 +41,18 @@ namespace Api.GiaDungPlus.Controllers
             _hoaDonBusiness.UpdateBan(model);
             return model;
         }
-        [Route("delete-HoaDonBan")]
+        [Route("delete-HoaDonBan/{maHoaDonBan}")]
         [HttpDelete]
-        public HoaDonBanModel DeleteItemBan([FromBody] HoaDonBanModel model)
+        public HoaDonBanModel DeleteItemBan(int maHoaDonBan)
         {
-            _hoaDonBusiness.DeleteBan(model);
-            return model;
+            HoaDonBanModel modelToDelete = _hoaDonBusiness.GetDataByIDBan(maHoaDonBan);
+
+            if (modelToDelete != null)
+            {
+                _hoaDonBusiness.DeleteBan(modelToDelete);
+            }
+
+            return modelToDelete;
         }
 
         [Route("hoadonnhap-get-by-id/{id}:")]
@@ -47,6 +60,13 @@ namespace Api.GiaDungPlus.Controllers
         public HoaDonNhapModel GetDataByIDNhap(int id)
         {
             return _hoaDonBusiness.GetDataByIDNhap(id);
+        }
+        [Route("get_all_HoaDonNhap")]
+        [HttpGet]
+        public IActionResult GetAllNhap()
+        {
+            var hoadonnhaps = _hoaDonBusiness.GetAllNhap();
+            return Ok(hoadonnhaps);
         }
         [Route("create-HoaDonNhap")]
         [HttpPost]
@@ -62,12 +82,18 @@ namespace Api.GiaDungPlus.Controllers
             _hoaDonBusiness.UpdateNhap(model);
             return model;
         }
-        [Route("delete-HoaDonNhap")]
+        [Route("delete-HoaDonNhap/{maHoaDonNhap}")]
         [HttpDelete]
-        public HoaDonNhapModel DeleteItemNhap([FromBody] HoaDonNhapModel model)
+        public HoaDonNhapModel DeleteItemNhap(int maHoaDonNhap)
         {
-            _hoaDonBusiness.DeleteNhap(model);
-            return model;
+            HoaDonNhapModel modelToDelete = _hoaDonBusiness.GetDataByIDNhap(maHoaDonNhap);
+
+            if (modelToDelete != null)
+            {
+                _hoaDonBusiness.DeleteNhap(modelToDelete);
+            }
+
+            return modelToDelete;
         }
     }
 }

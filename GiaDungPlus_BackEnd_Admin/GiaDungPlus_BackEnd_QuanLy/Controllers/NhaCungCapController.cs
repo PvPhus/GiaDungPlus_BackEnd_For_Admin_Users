@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Interfaces;
+﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Interfaces;
 using DataModel;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,13 @@ namespace Api.GiaDungPlus.Controllers
         {
             return _NhaCungCapBusiness.GetDataByID(id);
         }
+        [Route("get_all_NhaCungCap")]
+        [HttpGet]
+        public IActionResult GetAllNhaCungCap()
+        {
+            var nhacungcaps = _NhaCungCapBusiness.GetAllNhaCungCap();
+            return Ok(nhacungcaps);
+        }
         [Route("create-NhaCungCap")]
         [HttpPost]
         public NhaCungCapModel CreateItem([FromBody] NhaCungCapModel model)
@@ -33,12 +41,18 @@ namespace Api.GiaDungPlus.Controllers
             _NhaCungCapBusiness.Update(model);
             return model;
         }
-        [Route("delete-NhaCungCap")]
+        [Route("delete-NhaCungCap/{maNhaCungCap}")]
         [HttpDelete]
-        public NhaCungCapModel DeleteItem([FromBody] NhaCungCapModel model)
+        public NhaCungCapModel DeleteItemNhap(int maNhaCungCap)
         {
-            _NhaCungCapBusiness.Delete(model);
-            return model;
+            NhaCungCapModel modelToDelete = _NhaCungCapBusiness.GetDataByID(maNhaCungCap);
+
+            if (modelToDelete != null)
+            {
+                _NhaCungCapBusiness.Delete(modelToDelete);
+            }
+
+            return modelToDelete;
         }
         [Route("search-NhaCungCap")]
         [HttpPost]

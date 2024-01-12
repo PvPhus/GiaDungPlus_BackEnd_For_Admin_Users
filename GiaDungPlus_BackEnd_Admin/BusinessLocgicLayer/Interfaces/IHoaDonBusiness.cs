@@ -10,11 +10,14 @@ namespace BusinessLogicLayer.Interfaces
     public partial interface IHoaDonBusiness
     {
         HoaDonBanModel GetDataByIDBan(int id);
+        List<HoaDonBanModel> GetAllBan();
         bool CreateBan(HoaDonBanModel model);
         bool UpdateBan(HoaDonBanModel model);
         bool DeleteBan(HoaDonBanModel model);
+        
 
         HoaDonNhapModel GetDataByIDNhap(int id);
+        List<HoaDonNhapModel> GetAllNhap();
         bool CreateNhap(HoaDonNhapModel model);
         bool UpdateNhap(HoaDonNhapModel model);
         bool DeleteNhap(HoaDonNhapModel model);

@@ -14,5 +14,6 @@ namespace DataAccessLayer.Interfaces
         bool Update(NhaCungCapModel model);
         bool Delete(NhaCungCapModel model);
         public List<NhaCungCapModel> SearchNCC(int pageIndex, int pageSize, out long total, string nameNCC);
+        List<NhaCungCapModel> GetAllNhaCungCap();
     }
 }
